@@ -80,7 +80,7 @@ class RUP_parser:
             if new_hour_parent_id == child_code_xml and int(hour.get("Количество")) > 1:
                 course = int(hour.get("Курс"))
                 term = int(hour.get("Семестр"))
-                child_object['clock_cells'][course]['terms'][term - 1]['clock_cells'].append({
+                child_object['clock_cells'][course - 1]['terms'][term - 1]['clock_cells'].append({
                     'id': str(uuid.uuid4()),
                     'code_of_type_work': self.spravochnik_vidy_rabot.get(hour.get("КодВидаРаботы")),
                     'code_of_type_hours': self.spravochnik_tipa_chasov.get((hour.get("КодТипаЧасов"))),
